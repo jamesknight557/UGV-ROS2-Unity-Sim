@@ -2,23 +2,6 @@
 
 This repository contains a complete Unmanned Ground Vehicle (UGV) simulation built using **ROS2 Humble** and **Unity**. The system integrates SLAM, navigation (Nav2), simulated sensors, a MAVROS/MAVLink bridge, real-time video streaming, and full Unity physics.
 
-##  Repository Structure
-
-ugv_sim/
-│
-├── UnitySim/ # Full Unity project
-│ ├── Assets/ # Models, scripts, prefabs, scenes
-│ ├── Packages/
-│ ├── ProjectSettings/
-│ └── (Library/Temp ignored via .gitignore)
-│
-└── ros_tcp_ws/ # ROS2 workspace
-├── src/ # ROS2 packages (nodes, bridges, endpoints)
-├── install/ # Ignored
-├── build/ # Ignored
-└── log/ # Ignored
-
-
 ##  Overview
 
 This simulation allows a UGV to be driven, mapped, and navigated using ROS2 while running physically in Unity. It supports:
@@ -34,10 +17,10 @@ This simulation allows a UGV to be driven, mapped, and navigated using ROS2 whil
 
 ##  ROS2 Setup
 
-cd ros_tcp_ws
-source /opt/ros/humble/setup.bash
-colcon build --symlink-install
-source install/setup.bash
+cd ros_tcp_ws  
+source /opt/ros/humble/setup.bash  
+colcon build --symlink-install  
+source install/setup.bash  
 
 
 ##  Unity Setup
@@ -76,15 +59,15 @@ ros2 run rqt_image_view rqt_image_view
 - LIDAR must remain fixed relative to `base_link`.  
 - Use RViz to inspect TF (`odom`, `base_link`, `laser`).  
 
-Clear costmaps when noise builds:
+Clear costmaps when noise builds:  
 
-ros2 service call /clear_entire_costmap std_srvs/srv/Empty {}
-ros2 service call /clear_entirely_local_costmap std_srvs/srv/Empty {}
-ros2 service call /clear_entirely_global_costmap std_srvs/srv/Empty {}
+ros2 service call /clear_entire_costmap std_srvs/srv/Empty {}  
+ros2 service call /clear_entirely_local_costmap std_srvs/srv/Empty {}  
+ros2 service call /clear_entirely_global_costmap std_srvs/srv/Empty {}  
 
 
-Reset SLAM entirely:
-ros2 topic pub /slam_toolbox/clear_map std_msgs/msg/Empty {}
+Reset SLAM entirely:  
+ros2 topic pub /slam_toolbox/clear_map std_msgs/msg/Empty {}  
 
 
 ##  Mission Planning (QGroundControl)
@@ -95,7 +78,7 @@ ros2 topic pub /slam_toolbox/clear_map std_msgs/msg/Empty {}
 
 ##  Quick Start (Minimal Commands)
 
-Terminal 1
+Terminal 1  
 
 ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=0.0.0.0
 
