@@ -1,0 +1,56 @@
+######################
+# ROS2 / colcon
+######################
+ros_tcp_ws/build/
+ros_tcp_ws/install/
+ros_tcp_ws/log/
+ros_tcp_ws/*/.venv/
+ros_tcp_ws/*/__pycache__/
+ros_tcp_ws/*/*.pyc
+
+######################
+# Unity (UnitySim project)
+######################
+UnitySim/Library/
+UnitySim/Temp/
+UnitySim/Logs/
+UnitySim/Obj/
+UnitySim/Build/
+UnitySim/Builds/
+UnitySim/UserSettings/
+UnitySim/.vs/
+UnitySim/.vscode/
+
+# Crash/temporary files
+*.pidb
+*.userprefs
+*.csproj
+*.sln
+*.unityproj
+*.tmp
+*.svd
+*.pdb
+
+######################
+# OS junk
+######################
+.DS_Store
+Thumbs.db
+
+######################
+# IDE / editor
+######################
+.vscode/
+.idea/
+*.swp
+
+######################
+# Python
+######################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv

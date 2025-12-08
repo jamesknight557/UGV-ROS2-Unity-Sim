@@ -1,0 +1,150 @@
+amcl:
+  ros__parameters:
+    use_sim_time: false
+    base_frame_id: "base_link"
+    odom_frame_id: "odom"
+    global_frame_id: "map"
+    scan_topic: "scan"
+    min_particles: 500
+    max_particles: 2000
+    laser_max_range: 10.0
+    laser_min_range: 0.05
+    laser_z_hit: 0.95
+    laser_z_rand: 0.05
+    update_min_a: 0.2
+    update_min_d: 0.1
+
+map_server:
+  ros__parameters:
+    use_sim_time: false
+    yaml_filename: ""
+
+map_saver_server:
+  ros__parameters:
+    save_map_timeout: 5.0
+    free_thresh_default: 0.25
+    occupied_thresh_default: 0.65
+
+bt_navigator:
+  ros__parameters:
+    use_sim_time: false
+    global_frame: "map"
+    robot_base_frame: "base_link"
+    odom_topic: "odom"
+    bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
+    transform_tolerance: 0.2
+
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    controller_frequency: 20.0
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+    odom_topic: "odom"
+    base_frame_id: "base_link"
+
+planner_server:
+  ros__parameters:
+    use_sim_time: false
+    expected_planner_frequency: 5.0
+    planner_plugins: ["GridBased"]
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+    global_frame: "map"
+    robot_base_frame: "base_link"
+
+behavior_server:
+  ros__parameters:
+    use_sim_time: false
+    global_frame: "map"
+    robot_base_frame: "base_link"
+
+waypoint_follower:
+  ros__parameters:
+    use_sim_time: false
+    loop_rate: 20
+    stop_on_failure: false
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: false
+      global_frame: "odom"
+      robot_base_frame: "base_link"
+      update_frequency: 10.0
+      publish_frequency: 10.0
+      width: 5.0
+      height: 5.0
+      resolution: 0.05
+      rolling_window: true
+      robot_radius: 0.4
+      plugins: ["obstacle_layer", "inflation_layer"]
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        observation_sources: "scan"
+        scan:
+          topic: "/scan"
+          max_obstacle_height: 2.0
+          clearing: true
+          marking: true
+          data_type: "LaserScan"
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        inflation_radius: 0.7
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: false
+      global_frame: "map"
+      robot_base_frame: "base_link"
+      update_frequency: 5.0
+      publish_frequency: 5.0
+      width: 20.0
+      height: 20.0
+      resolution: 0.05
+      robot_radius: 0.4
+      track_unknown_space: true
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: true
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        observation_sources: "scan"
+        scan:
+          topic: "/scan"
+          max_obstacle_height: 2.0
+          clearing: true
+          marking: true
+          data_type: "LaserScan"
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        inflation_radius: 0.7
+
+nav2_controller:
+  ros__parameters:
+    use_sim_time: false
+
+nav2_planner:
+  ros__parameters:
+    use_sim_time: false
+
+nav2_behavior_tree:
+  ros__parameters:
+    use_sim_time: false
+
+lifecycle_manager_navigation:
+  ros__parameters:
+    use_sim_time: false
+    autostart: true
+    node_names: [
+      "controller_server",
+      "planner_server",
+      "behavior_server",
+      "bt_navigator",
+      "waypoint_follower",
+      "map_server",
+      "amcl"
+    ]
+
