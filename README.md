@@ -41,6 +41,8 @@ Unity will automatically connect to ROS2 via the ROS-TCP Connector.
 
 To start the system simply run ros_control_panel.py, to do this navigate to "cd ~/ugv_sim" (your project folder that contains this repo) in the terminal, then use "python3 ros_control_panel.py", the menu you will then see brings up all of the different nodes required to run the package. The essential ones to run are the Unity Ros2 Stack, Slam Toolbox stack, Nav2 Stack and RVIZ Nav2, this will give you full functionality. Display 1 in unity should be showing blue arrows to let you know you are connected to the endpoint, not red.
 
+Download QGC as an App Image from their website, in the comms tab set up this network XXXXXXXXXXX
+
 ##  SLAM / Nav2 Notes
 
 - LIDAR must remain fixed relative to `base_link`.  
