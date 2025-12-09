@@ -1,6 +1,6 @@
 # UGV ROS2 + Unity Simulation Environment
 
-This repository contains a complete Unmanned Ground Vehicle (UGV) simulation built using **ROS2 Humble** and **Unity**. The system integrates SLAM, navigation (Nav2), simulated sensors, a MAVROS/MAVLink bridge, real-time video streaming, and full Unity physics.
+This repository contains a complete Unmanned Ground Vehicle (UGV) simulation built using **ROS2 Humble** and **Unity**. The system integrates SLAM, navigation (Nav2), simulated sensors, a MAVROS/MAVLink bridge to QGC, real-time video streaming, and full Unity physics.
 
 ##  Overview
 
@@ -12,10 +12,12 @@ This simulation allows a UGV to be driven, mapped, and navigated using ROS2 whil
 - Nav2 for global / local planning  
 - MAVROS + QGroundControl integration  
 - Video streaming  
-- Custom odometry publisher  
+- A custom odometry publisher  
 - ROS ↔ Unity networking via ros_tcp_endpoint
 
 ##  ROS2 Setup
+
+I reccomend using the most recent version of Ubuntu, this package was developed on Ubuntu 22.04. Once you have your distrubution install ROS2 Humble with the following terminal commands, more comprehensive instructions can be found here: [ROS2 Humble Wiki](https://docs.ros.org/en/humble/index.html).
 
 cd ros_tcp_ws  
 source /opt/ros/humble/setup.bash  
