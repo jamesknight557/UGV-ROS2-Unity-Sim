@@ -27,34 +27,19 @@ source install/setup.bash
 
 ##  Unity Setup
 
+Downlaod the latest version of unity and in the unity hub select the UnitySim folder.
+
 1. Open Unity Hub  
 2. Click **Open**  
-3. Select the `UnitySim/` folder  
-4. Press **Play** to begin simulation  
+3. Select the `UnitySim/` folder
+4. The Scene is called "UGVScene"
+5. Press **Play** to begin simulation  
 
 Unity will automatically connect to ROS2 via the ROS-TCP Connector.
 
 ##  Running the Full System
 
-### 1. Start ROS–TCP Endpoint
-ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=0.0.0.0
-
-
-### 2. Start SLAM Toolbox
-ros2 launch slam_toolbox online_async_launch.py
-
-
-### 3. Start Nav2
-ros2 launch nav2_bringup navigation_launch.py
-
-
-### 4. Start MAVROS Bridge (QGroundControl)
-python3 ros_tcp_ws/src/mavros_bridge/mavros_bridge/simple_mavlink_bridge.py
-
-
-### 5. View camera feed (optional)
-ros2 run rqt_image_view rqt_image_view
-
+To start the system simply run ros_control_panel.py, to do this navigate to "cd ~/ugv_sim" (your project folder that contains this repo) in the terminal, then use "python3 ros_control_panel.py", the menu you will then see brings up all of the different nodes required to run the package. The essential ones to run are the Unity Ros2 Stack, Slam Toolbox stack, Nav2 Stack and RVIZ Nav2, this will give you full functionality. Display 1 in unity should be showing blue arrows to let you know you are connected to the endpoint, not red.
 
 ##  SLAM / Nav2 Notes
 
@@ -72,39 +57,14 @@ Reset SLAM entirely:
 ros2 topic pub /slam_toolbox/clear_map std_msgs/msg/Empty {}  
 
 
-##  Mission Planning (QGroundControl)
-
-- QGC sends missions via MAVLink  
-- MAVROS bridge converts missions → navigation goals  
-- Unity robot executes paths realistically  
-
-##  Quick Start (Minimal Commands)
-
-Terminal 1  
-
-ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=0.0.0.0
-
-Terminal 2
-
-ros2 launch slam_toolbox online_async_launch.py
-
-Terminal 3
-
-ros2 launch nav2_bringup navigation_launch.py
-
-Terminal 4
-
-python3 ros_tcp_ws/src/mavros_bridge/mavros_bridge/simple_mavlink_bridge.py
-
-
-Open Unity and press **Play**.
-
 ##  Notes
 
-- Unity Library/Temp and ROS build/install/log are intentionally ignored via .gitignore.  
+- Unity Library/Temp and ROS build/install/log are intentionally ignored via .gitignore to reduce size of repo.  
 - Modular design allows easy extension with new sensors, controllers, or planners.  
 
 ##  Contributions
 
 Feel free to fork or open issues. This project supports rapid robotics simulation and autonomous UGV research.
+
+Contact jamesknight557@gmail.com for any support or queries
 
