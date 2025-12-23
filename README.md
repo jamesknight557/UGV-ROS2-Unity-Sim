@@ -31,7 +31,7 @@ source install/setup.bash
 
 ##  Unity Setup
 
-Downlaod the latest version of unity and in the unity hub select the UnitySim folder.
+Downlaod the latest version of unity and in the unity hub select the UnitySim folder that you pulled down from this repo.
 
 1. Open Unity Hub  
 2. Click **Open**  
@@ -39,7 +39,7 @@ Downlaod the latest version of unity and in the unity hub select the UnitySim fo
 4. The Scene is called "UGVScene"
 5. Press **Play** to begin simulation  
 
-Unity will automatically connect to ROS2 via the ROS-TCP Connector.
+Unity will automatically connect to ROS2 via the ROS-TCP Connector if you have installed the ros tcp endpoint package in the unity package manager.
 
 ##  Running the Full System
 
@@ -50,18 +50,18 @@ Download QGC as an App Image from their website, in the comms tab set up this ne
 ##  SLAM / Nav2 Notes
 
 - LIDAR must remain fixed relative to `base_link`.  
-- Use RViz to inspect TF (`odom`, `base_link`, `laser`).  
+- Use RViz to inspect TF (`odom`, `base_link`, `laser`).
+- Use the Nav2 Goal tool to decide a position in Rviz that you would like the robot to move to when all nodes are running
 
-Clear costmaps when noise builds:  
+## Real Robot
 
-ros2 service call /clear_entire_costmap std_srvs/srv/Empty {}  
-ros2 service call /clear_entirely_local_costmap std_srvs/srv/Empty {}  
-ros2 service call /clear_entirely_global_costmap std_srvs/srv/Empty {}  
+The physical robot runs on an arduino Uno. Power for the system comes from two 3.7v lithium ion batterys. The batterys plug into both the motor driver shield and the arduino power supply, use a BUCK circuit to regulate the batterys output down to 5.1v to power the arduino. 
 
+The motors for the tracks are connected to terminals M1 and M3. The bluetooth receiver module connects to digital pins 9 and 10, and receives 5v from the BUCK circuit, remember to ground it. Twist commmands are converted to pwm signals, these signals are sent via bluetooth from the node that handles twist commands form /cmd_vel to the arduinos serial input via bluetooth in the format {D,left pwm, right pwm} and takes into consideration the mid point between the robots tracks.
 
-Reset SLAM entirely:  
-ros2 topic pub /slam_toolbox/clear_map std_msgs/msg/Empty {}  
+Always remove/isolate the batteys when not using the robot. The nodes to connect the robot via bluetooth and set-up the bridge can be activated in the ros_control_panel.py node.
 
+Camera and LIDAR will be connected to the raspberyy pi (yet to be implemented), this will connect to the ROS2 network via wifi/celluar to transfer /image_raw and /laser
 
 ##  Notes
 
