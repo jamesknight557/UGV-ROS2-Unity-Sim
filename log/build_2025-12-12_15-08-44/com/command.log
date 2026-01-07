@@ -1,0 +1,4 @@
+Invoking command in '/home/james/ugv_sim/build/com': /usr/bin/cmake /home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~ -DCMAKE_INSTALL_PREFIX=/home/james/ugv_sim/install/com
+Invoked command in '/home/james/ugv_sim/build/com' returned '0': /usr/bin/cmake /home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~ -DCMAKE_INSTALL_PREFIX=/home/james/ugv_sim/install/com
+Invoking command in '/home/james/ugv_sim/build/com': /usr/bin/cmake --build /home/james/ugv_sim/build/com -- -j8 -l8
+Invoked command in '/home/james/ugv_sim/build/com' returned '2': /usr/bin/cmake --build /home/james/ugv_sim/build/com -- -j8 -l8

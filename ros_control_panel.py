@@ -5,6 +5,21 @@ import tkinter as tk
 from functools import partial
 import time
 
+
+
+# ---- HC-05 + cmd_vel bridge settings ----
+HC05_MAC = "98:D3:21:F8:36:AB"
+RFCOMM_DEV = 0
+RFCOMM_CH = 1
+
+CMDVEL_NODE_PATH = "~/ugv_sim/ros_tcp_ws/src/ps4_twist/ps4_twist/cmdvel_to_bt_serial.py"
+BT_BAUD = 9600
+TRACK_WIDTH = 0.32
+MAX_LIN = 0.25
+MIN_PWM = 110
+DEADBAND = 0.0
+
+
 def run_in_terminal(command: str):
     """
     Open a new GNOME Terminal window and run the given command.
@@ -65,6 +80,39 @@ def run_unity_ros_stack():
     run_in_terminal(camera_bridge_cmd)
     
     time.sleep(2)
+    
+def connect_bt():
+    """
+    1) Start a persistent rfcomm SPP connection to HC-05 (this blocks; keep terminal open)
+    2) Start the ROS2 cmd_vel -> serial bridge node in another terminal
+    """
+
+    # Terminal A: keep rfcomm connected (you'll be prompted for sudo password)
+    rfcomm_cmd = (
+        f"sudo rfcomm release {RFCOMM_DEV} || true; "
+        f"sudo rfcomm connect {RFCOMM_DEV} {HC05_MAC} {RFCOMM_CH}"
+    )
+    run_in_terminal(rfcomm_cmd)
+    
+def run_cmdvel_node():
+    # Terminal 2: run the ROS2 python node in a clean ROS env (this is your known-working pattern)
+    node_cmd = (
+        "bash -lc '"
+        "source /opt/ros/humble/setup.bash && "
+        "source ~/ugv_sim/ros_tcp_ws/install/setup.bash && "
+        f"python3 {CMDVEL_NODE_PATH} "
+        "--ros-args "
+        f"-p port:=/dev/rfcomm{RFCOMM_DEV} "
+        f"-p baud:={BT_BAUD} "
+        f"-p track_width:={TRACK_WIDTH} "
+        f"-p max_lin:={MAX_LIN} "
+        f"-p min_pwm:={MIN_PWM} "
+        f"-p deadband:={DEADBAND}"
+        "'"
+    )
+    run_in_terminal(node_cmd)
+
+
 
 # ----------------- GUI SETUP -----------------
 
@@ -75,7 +123,7 @@ root.geometry("500x600")
 
 button_opts = {
     "width": 40,
-    "height": 2,
+    "height": 1,
     "bg": "white",
     "fg": "black",
 }
@@ -155,18 +203,48 @@ tk.Button(root, text="Run Unity QGC Stack",
           **button_opts).pack(pady=5)
 
 # SLAM toolbox stack (Nav2 bringup)
-tk.Button(root, text="Start SLAM Toolbox (RVIZ stack)",
-          command=partial(run_in_terminal, "ros2 launch nav2_bringup navigation_launch.py use_sim_time:=false"),
+tk.Button(root, text="Start Nav2",
+          command=partial(run_in_terminal, "ros2 launch nav2_bringup navigation_launch.py \
+  use_sim_time:=false"),
           **button_opts).pack(pady=5)
 
 # Nav2 + SLAM combo
-tk.Button(root, text="Start Nav2",
+tk.Button(root, text="Start SLAM Toolbox (RVIZ stack)",
           command=run_slam_toolbox,
           **button_opts).pack(pady=5)
+          
+# controller 1
+tk.Button(root, text="Controller 1",
+	  command=partial(run_in_terminal, "ros2 run joy joy_node"),
+          **button_opts).pack(pady=5)
 
+# controller 2
+tk.Button(root, text="Controller 2",
+	  command=partial(run_in_terminal, "cd ~/ugv_sim/ros_tcp_ws/src/ps4_twist/ps4_twist && python3 ps4_to_twist.py"),
+          **button_opts).pack(pady=5)
+          
+# robot Camera
+tk.Button(root, text="Robot Camera",
+	  command=partial(run_in_terminal, "cd ~/ugv_sim/ros_tcp_ws/src/ps4_twist/ps4_twist && python3 CameraStream.py"),
+          **button_opts).pack(pady=5)
+
+
+#Robot button 1
+tk.Button(root, text="Robot BT Bridge",
+          command=connect_bt,
+          **button_opts).pack(pady=5) 
+          
+#Robot button 1
+tk.Button(root, text="Robot BT cmd_vel Node",
+          command=run_cmdvel_node,
+          **button_opts).pack(pady=5)  
+                  
 # Quit button
 tk.Button(root, text="Quit", command=root.destroy,
           bg="#FF6666", fg="white", width=20, height=2).pack(pady=15)
+          
+
+
 
 root.mainloop()
 

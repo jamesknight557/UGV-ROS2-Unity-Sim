@@ -1,0 +1,102 @@
+[0.000000] (-) TimerEvent: {}
+[0.001689] (com) JobQueued: {'identifier': 'com', 'dependencies': OrderedDict()}
+[0.002075] (mavros_bridge) JobQueued: {'identifier': 'mavros_bridge', 'dependencies': OrderedDict()}
+[0.002144] (ps4_twist) JobQueued: {'identifier': 'ps4_twist', 'dependencies': OrderedDict()}
+[0.002167] (ros_tcp_endpoint) JobQueued: {'identifier': 'ros_tcp_endpoint', 'dependencies': OrderedDict()}
+[0.002186] (unity_nav2_bringup) JobQueued: {'identifier': 'unity_nav2_bringup', 'dependencies': OrderedDict()}
+[0.002211] (unity_slam_bringup) JobQueued: {'identifier': 'unity_slam_bringup', 'dependencies': OrderedDict()}
+[0.003893] (com) JobStarted: {'identifier': 'com'}
+[0.015504] (mavros_bridge) JobStarted: {'identifier': 'mavros_bridge'}
+[0.030567] (ps4_twist) JobStarted: {'identifier': 'ps4_twist'}
+[0.043431] (ros_tcp_endpoint) JobStarted: {'identifier': 'ros_tcp_endpoint'}
+[0.050576] (unity_nav2_bringup) JobStarted: {'identifier': 'unity_nav2_bringup'}
+[0.057574] (unity_slam_bringup) JobStarted: {'identifier': 'unity_slam_bringup'}
+[0.066195] (com) JobProgress: {'identifier': 'com', 'progress': 'cmake'}
+[0.067021] (com) Command: {'cmd': ['/usr/bin/cmake', '/home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~', '-DCMAKE_INSTALL_PREFIX=/home/james/ugv_sim/install/com'], 'cwd': '/home/james/ugv_sim/build/com', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', ':/home/james/ardupilot_gazebo/build:/home/james/ardupilot_gazebo/build'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('GZ_SIM_RESOURCE_PATH', ':/home/james/ardupilot_gazebo/models:/home/james/ardupilot_gazebo/worlds:/home/james/ardupilot_gazebo/models:/home/james/ardupilot_gazebo/worlds:/home/james/gz_ardupilot_workspace'), ('LANGUAGE', 'en_GB:en'), ('USER', 'james'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/james'), ('OLDPWD', '/home/james/ugv_sim/ros_tcp_ws/ps4_twist/ps4_twist'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1491'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=6996cb26e1da7a6b7dc8fd62693c2378'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/james/ugv_sim/ros_tcp_ws/ps4_twist/ps4_twist/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'james'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'james'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/lib/ccache:/home/james/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/james-point:@/tmp/.ICE-unix/1491,unix/james-point:/tmp/.ICE-unix/1491'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80727f9c_9626_4d5e_93fb_5e82b30ad51a'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.5Y1BH3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.118'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/james/ugv_sim/build/com'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=6996cb26e1da7a6b7dc8fd62693c2378'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.101063] (-) TimerEvent: {}
+[0.201874] (-) TimerEvent: {}
+[0.302362] (-) TimerEvent: {}
+[0.402889] (-) TimerEvent: {}
+[0.503677] (-) TimerEvent: {}
+[0.604776] (-) TimerEvent: {}
+[0.705375] (-) TimerEvent: {}
+[0.805922] (-) TimerEvent: {}
+[0.906452] (-) TimerEvent: {}
+[1.006875] (-) TimerEvent: {}
+[1.107422] (-) TimerEvent: {}
+[1.208658] (-) TimerEvent: {}
+[1.310048] (-) TimerEvent: {}
+[1.410614] (-) TimerEvent: {}
+[1.511265] (-) TimerEvent: {}
+[1.611838] (-) TimerEvent: {}
+[1.712725] (-) TimerEvent: {}
+[1.813361] (-) TimerEvent: {}
+[1.914329] (-) TimerEvent: {}
+[2.015431] (-) TimerEvent: {}
+[2.116418] (-) TimerEvent: {}
+[2.216794] (-) TimerEvent: {}
+[2.317202] (-) TimerEvent: {}
+[2.417991] (-) TimerEvent: {}
+[2.518999] (-) TimerEvent: {}
+[2.557210] (com) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[2.557514] (com) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[2.557594] (com) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[2.557659] (com) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[2.557721] (com) StdoutLine: {'line': b'-- Check for working C compiler: /usr/lib/ccache/cc - skipped\n'}
+[2.557783] (com) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[2.557982] (com) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[2.558112] (com) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[2.558202] (com) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[2.558267] (com) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped\n'}
+[2.558329] (com) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[2.558391] (com) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[2.558453] (com) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.558514] (com) StdoutLine: {'line': b'-- Generating done\n'}
+[2.558576] (com) StdoutLine: {'line': b'-- Build files have been written to: /home/james/ugv_sim/build/com\n'}
+[2.619191] (-) TimerEvent: {}
+[2.720459] (-) TimerEvent: {}
+[2.821186] (-) TimerEvent: {}
+[2.921609] (-) TimerEvent: {}
+[3.022304] (-) TimerEvent: {}
+[3.086708] (com) CommandEnded: {'returncode': 0}
+[3.087563] (com) JobProgress: {'identifier': 'com', 'progress': 'build'}
+[3.088550] (com) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/james/ugv_sim/build/com', '--', '-j8', '-l8'], 'cwd': '/home/james/ugv_sim/build/com', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', ':/home/james/ardupilot_gazebo/build:/home/james/ardupilot_gazebo/build'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('GZ_SIM_RESOURCE_PATH', ':/home/james/ardupilot_gazebo/models:/home/james/ardupilot_gazebo/worlds:/home/james/ardupilot_gazebo/models:/home/james/ardupilot_gazebo/worlds:/home/james/gz_ardupilot_workspace'), ('LANGUAGE', 'en_GB:en'), ('USER', 'james'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/james'), ('OLDPWD', '/home/james/ugv_sim/ros_tcp_ws/ps4_twist/ps4_twist'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1491'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=6996cb26e1da7a6b7dc8fd62693c2378'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/james/ugv_sim/ros_tcp_ws/ps4_twist/ps4_twist/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'james'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'james'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/lib/ccache:/home/james/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/james/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/james-point:@/tmp/.ICE-unix/1491,unix/james-point:/tmp/.ICE-unix/1491'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/80727f9c_9626_4d5e_93fb_5e82b30ad51a'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.5Y1BH3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.118'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/james/ugv_sim/build/com'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=6996cb26e1da7a6b7dc8fd62693c2378'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[3.124029] (-) TimerEvent: {}
+[3.226929] (-) TimerEvent: {}
+[3.300148] (com) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/COMIntegration.dir/COMIntegration.cpp.o\x1b[0m\n'}
+[3.329626] (-) TimerEvent: {}
+[3.438397] (-) TimerEvent: {}
+[3.543690] (-) TimerEvent: {}
+[3.645727] (-) TimerEvent: {}
+[3.752554] (-) TimerEvent: {}
+[3.853097] (-) TimerEvent: {}
+[3.956501] (-) TimerEvent: {}
+[3.974578] (com) StderrLine: {'line': b'\x1b[01m\x1b[K/home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~/COMIntegration.cpp:11:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kwindows.h: No such file or directory\n'}
+[3.975078] (com) StderrLine: {'line': b'   11 | #include \x1b[01;31m\x1b[K<windows.h>\x1b[m\x1b[K\n'}
+[3.975425] (com) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.975569] (com) StderrLine: {'line': b'compilation terminated.\n'}
+[3.979151] (com) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/COMIntegration.dir/build.make:76: CMakeFiles/COMIntegration.dir/COMIntegration.cpp.o] Error 1\n'}
+[3.979772] (com) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/COMIntegration.dir/all] Error 2\n'}
+[3.979996] (com) StderrLine: {'line': b'gmake: *** [Makefile:91: all] Error 2\n'}
+[3.990077] (com) CommandEnded: {'returncode': 2}
+[3.990908] (com) JobEnded: {'identifier': 'com', 'rc': 2}
+[4.056953] (-) TimerEvent: {}
+[4.158078] (-) TimerEvent: {}
+[4.262038] (-) TimerEvent: {}
+[4.371535] (-) TimerEvent: {}
+[4.474426] (-) TimerEvent: {}
+[4.579699] (-) TimerEvent: {}
+[4.680853] (-) TimerEvent: {}
+[4.781370] (-) TimerEvent: {}
+[4.884047] (-) TimerEvent: {}
+[4.989623] (-) TimerEvent: {}
+[5.096071] (-) TimerEvent: {}
+[5.198610] (-) TimerEvent: {}
+[5.294040] (mavros_bridge) JobEnded: {'identifier': 'mavros_bridge', 'rc': 'SIGINT'}
+[5.298883] (-) TimerEvent: {}
+[5.353417] (unity_slam_bringup) JobEnded: {'identifier': 'unity_slam_bringup', 'rc': 'SIGINT'}
+[5.373814] (ps4_twist) JobEnded: {'identifier': 'ps4_twist', 'rc': 'SIGINT'}
+[5.382157] (ros_tcp_endpoint) JobEnded: {'identifier': 'ros_tcp_endpoint', 'rc': 'SIGINT'}
+[5.400626] (-) TimerEvent: {}
+[5.412625] (unity_nav2_bringup) JobEnded: {'identifier': 'unity_nav2_bringup', 'rc': 'SIGINT'}
+[5.417111] (-) EventReactorShutdown: {}

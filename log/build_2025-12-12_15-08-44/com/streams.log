@@ -1,0 +1,27 @@
+[0.064s] Invoking command in '/home/james/ugv_sim/build/com': /usr/bin/cmake /home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~ -DCMAKE_INSTALL_PREFIX=/home/james/ugv_sim/install/com
+[2.554s] -- The C compiler identification is GNU 11.4.0
+[2.554s] -- The CXX compiler identification is GNU 11.4.0
+[2.554s] -- Detecting C compiler ABI info
+[2.554s] -- Detecting C compiler ABI info - done
+[2.554s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[2.554s] -- Detecting C compile features
+[2.554s] -- Detecting C compile features - done
+[2.554s] -- Detecting CXX compiler ABI info
+[2.554s] -- Detecting CXX compiler ABI info - done
+[2.554s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[2.554s] -- Detecting CXX compile features
+[2.555s] -- Detecting CXX compile features - done
+[2.555s] -- Configuring done
+[2.555s] -- Generating done
+[2.555s] -- Build files have been written to: /home/james/ugv_sim/build/com
+[3.083s] Invoked command in '/home/james/ugv_sim/build/com' returned '0': /usr/bin/cmake /home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~ -DCMAKE_INSTALL_PREFIX=/home/james/ugv_sim/install/com
+[3.085s] Invoking command in '/home/james/ugv_sim/build/com': /usr/bin/cmake --build /home/james/ugv_sim/build/com -- -j8 -l8
+[3.296s] [ 50%] [32mBuilding CXX object CMakeFiles/COMIntegration.dir/COMIntegration.cpp.o[0m
+[3.971s] [01m[K/home/james/ugv_sim/UnitySim/Library/PackageCache/com.unity.ide.visualstudio@74aa435fc4bb/Editor/COMIntegration/COMIntegration~/COMIntegration.cpp:11:10:[m[K [01;31m[Kfatal error: [m[Kwindows.h: No such file or directory
+[3.971s]    11 | #include [01;31m[K<windows.h>[m[K
+[3.972s]       |          [01;31m[K^~~~~~~~~~~[m[K
+[3.972s] compilation terminated.
+[3.976s] gmake[2]: *** [CMakeFiles/COMIntegration.dir/build.make:76: CMakeFiles/COMIntegration.dir/COMIntegration.cpp.o] Error 1
+[3.976s] gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/COMIntegration.dir/all] Error 2
+[3.976s] gmake: *** [Makefile:91: all] Error 2
+[3.987s] Invoked command in '/home/james/ugv_sim/build/com' returned '2': /usr/bin/cmake --build /home/james/ugv_sim/build/com -- -j8 -l8
