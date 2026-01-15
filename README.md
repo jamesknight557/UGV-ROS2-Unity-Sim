@@ -63,6 +63,10 @@ Always remove/isolate the batteys when not using the robot. The nodes to connect
 
 Camera and LIDAR will be connected to the raspberyy pi (yet to be implemented), this will connect to the ROS2 network via wifi/celluar to transfer /image_raw and /laser
 
+<img width="552" height="376" alt="Structure" src="https://github.com/jamesknight557/UGV-ROS2-Unity-Sim/blob/main/Learner%20Task.png" />
+<img width="500" height="500" alt="Structure" src="https://github.com/jamesknight557/UGV-ROS2-Unity-Sim/blob/main/IMG_20260107_155957.jpg" />
+
+
 ##  Notes
 
 - Unity Library/Temp and ROS build/install/log are intentionally ignored via .gitignore to reduce size of repo.  
